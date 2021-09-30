@@ -1,5 +1,5 @@
 ---
-name: Issue Template
+name: New Issue
 about: Follow the template while creating new issues
 title: ''
 labels: ''
