@@ -1,0 +1,44 @@
+.header {
+    position: relative;
+    font-family: 'Rock Salt', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 2rem auto;
+    text-align: center;
+    width: fit-content;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 3rem;
+    }
+
+    @media screen and (min-width: 1500px) {
+        font-size: 3.5rem;
+        margin: 3rem auto;
+    }
+
+    & span:first-of-type {
+        color: #FFF;
+    }
+    
+    & span:last-of-type {
+        color: #44DD66;
+    }
+}
+
+.headerOverlay {
+    position: absolute;
+    background-color: rgba($color: #44DD66, $alpha: 0.1);
+    height: 2rem;
+    width: calc(100% + 3rem);
+    bottom: 20%;
+    left: 50%;
+    transform: rotate(-5deg) translateX(-50%);
+    
+    @media screen and (min-width: 1024px) {
+        height: 3rem;
+    }
+
+    @media screen and (min-width: 1500px) {
+        height: 3.5rem;
+    }
+}
