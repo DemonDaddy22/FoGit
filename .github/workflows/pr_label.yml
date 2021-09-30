@@ -1,0 +1,13 @@
+name: Pull Request Label
+on:
+    pull_request:
+
+jobs:
+    pr_label:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Adding label
+              uses: actions/labeler@main
+              with:
+                  sync-labels: true
+                  repo-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

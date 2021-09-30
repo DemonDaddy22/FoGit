@@ -1,0 +1,28 @@
+modules:
+    - node_modules/*
+    - node_modules/**/*
+
+source:
+    - src/*
+    - src/**/*
+    - public/*
+    - public/**/*
+
+docs:
+    - '*.md'
+
+package:
+    - package.json
+    - package-lock.json
+
+config:
+    - .eslintrc.js
+    - .eslintignore
+    - .gitignore
+    - prettier.config.js
+    - .vscode/*
+    - tsconfig.json
+
+workflow:
+    - '.github/*'
+    - '.github/**/*'
