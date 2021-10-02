@@ -13,7 +13,7 @@ FoGit is an open-source project which aims to provide an easy tool to the user t
 - who all are following the user even when the user is not following them
 - who all are followed by the user and are following back the user
 
-Idea is to complete this project before Hacktoberfest '21 ends. Designs for the website will be updated soon, till then one can work on the open issues. Deployment pipeline will be set up once the project starts taking some shape.
+Idea is to complete this project before Hacktoberfest '21 ends. Designs can be found [here](design/). One can work on the open issues. Deployment pipeline will be set up once the project starts taking some shape.
 
 Let's make this happen!
 
