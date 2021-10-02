@@ -5,15 +5,20 @@
 ![Open Issues](https://img.shields.io/github/issues-raw/demondaddy22/fogit?color=%239e6eff&style=for-the-badge)
 ![Pull Requests](https://img.shields.io/github/issues-pr-raw/demondaddy22/fogit?color=%2302b09f&style=for-the-badge)
 
-If you want to contribute to this project, consider reading the [CONTRIBUTING.md](CONTRIBUTING.md) first to get a better idea of how to contribute to this repo
+If you want to contribute to this project, consider reading the
+[CONTRIBUTING.md](CONTRIBUTING.md) first to get a better idea of how to
+contribute to this repo
 
-FoGit is an open-source project which aims to provide an easy tool to the user to find out
+FoGit is an open-source project which aims to provide an easy tool to the user
+to find out
 
-- who all are not following back the user
-- who all are following the user even when the user is not following them
-- who all are followed by the user and are following back the user
+-   who all are not following back the user
+-   who all are following the user even when the user is not following them
+-   who all are followed by the user and are following back the user
 
-Idea is to complete this project before Hacktoberfest '21 ends. Designs can be found [here](design/). One can work on the open issues. Deployment pipeline will be set up once the project starts taking some shape.
+Idea is to complete this project before Hacktoberfest '21 ends. Designs can be
+found [here](design/). One can work on the open issues. Deployment pipeline will
+be set up once the project starts taking some shape.
 
 Let's make this happen!
 
@@ -21,7 +26,8 @@ Let's make this happen!
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -33,6 +39,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
