@@ -13,6 +13,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "DemonDaddy22",
+      "name": "Rohan Gupta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39908472?v=4",
+      "profile": "https://rohangupta.xyz/",
+      "contributions": [
+        "code",
+        "ideas",
+        "design",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
