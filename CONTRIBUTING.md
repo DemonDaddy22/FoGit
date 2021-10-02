@@ -40,7 +40,7 @@ To create an issue on this project, follow the [ISSUE_TEMPLATE](.github/ISSUE_TE
 ## PR Next
 
 Once you are done with creating an issue and developing the changes, it is time to merge them into the `master` branch. For this you need to create a Pull Request (PR) for the master branch. Each PR needs to pass certain pre-defined checks before the PR is ready to be reviewed. If your PR doesn't pass the checks, kindly make the necessary changes so that it is easier for the reviewer to review your code.
-To create a PR on this project, follow the [PULL_REQUEST_TEMPLATE](.github/PULL_REQUEST_TEMPLATE/pull_request_template.md).
+To create a PR on this project, follow the [PULL_REQUEST_TEMPLATE](.github/pull_request_template.md).
 
 ## Best Practices
 
