@@ -1,41 +1,42 @@
+/* eslint-disable prettier/prettier */
 /**
  *
  * @function isEmptyString - Checks if passed value is an empty string or not
- * @param {string | undefined} value
+ * @param {string} value
  * @returns `boolean` indicating whether `value` is an empty string
  *
  */
-export const isEmptyString = (value: string | undefined): boolean =>
-    !value || (typeof value === 'string' && value.trim().length === 0);
+export const isEmptyString = <T,>(value: string | T): boolean =>
+    typeof value !== 'string' || !value?.trim()?.length;
 
 /**
  *
  * @function isValidNumber - Checks if passed value is a valid number or not
- * @param {number | string | undefined} value
+ * @param {number | string} value
  * @returns `boolean` indicating whether `value` is a valid number
  *
  */
-export const isValidNumber = (value: number | string | undefined): boolean =>
+export const isValidNumber = <T,>(value: number | string | T): boolean =>
     !isNaN(Number(value));
 
 /**
  *
  * @function isEmptyList - Checks if passed object is an empty list or not
- * @param {Array<any> | undefined} obj
+ * @param {Array<any>} obj
  * @returns `boolean` indicating whether `obj` is an empty list
  *
  */
-export const isEmptyList = (obj: Array<any> | undefined): boolean =>
+export const isEmptyList = <T,>(obj: Array<T> | T): boolean =>
     !Array.isArray(obj) || (Array.isArray(obj) && obj.length === 0);
 
 /**
  *
  * @function isEmptyObject - Checks if passed object is an empty object or not
- * @param {Object | undefined} obj
+ * @param {Object} obj
  * @returns `boolean` indicating whether `obj` is an empty object
  *
  */
-export const isEmptyObject = (obj: Object | undefined): boolean =>
+export const isEmptyObject = <T,>(obj: Object | T): boolean =>
     !obj ||
     typeof obj !== 'object' ||
     Array.isArray(obj) ||
