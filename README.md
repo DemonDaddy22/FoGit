@@ -1,8 +1,6 @@
 <h1 align="center">FoGit</h1>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=for-the-badge)](#contributors-)
 ![Last Commit](https://img.shields.io/github/last-commit/demondaddy22/fogit?color=%23abd100&style=for-the-badge)
 ![Repo Size](https://img.shields.io/github/repo-size/demondaddy22/fogit?color=%23ff47b6&style=for-the-badge)
 ![Open Issues](https://img.shields.io/github/issues-raw/demondaddy22/fogit?color=%239e6eff&style=for-the-badge)
@@ -35,26 +33,12 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/ankitgauri26"><img src="https://avatars.githubusercontent.com/u/22481268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ankitgauri26</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=ankitgauri26" title="Code">💻</a></td>
     <td align="center"><a href="https://rohangupta.xyz/"><img src="https://avatars.githubusercontent.com/u/39908472?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Code">💻</a> <a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-DemonDaddy22" title="Design">🎨</a> <a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/ankitgauri26"><img src="https://avatars.githubusercontent.com/u/22481268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ankitgauri26</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=ankitgauri26" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://shades-of-demon.herokuapp.com/"><img src="https://avatars1.githubusercontent.com/u/39908472?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="https://github.com/DemonDaddy22/fogit/commits?author=DemonDaddy22" title="Code">💻</a> <a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/DemonDaddy22/fogit/commits?author=DemonDaddy22" title="Documentation">📖</a> <a href="https://github.com/DemonDaddy22/fogit/pulls?q=is%3Apr+reviewed-by%3ADemonDaddy22" title="Reviewed Pull Requests">👀</a></td>
-</table>
-
-<!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
