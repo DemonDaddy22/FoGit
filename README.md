@@ -1,6 +1,6 @@
 <h1 align="center">FoGit</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Last Commit](https://img.shields.io/github/last-commit/demondaddy22/fogit?color=%23abd100&style=for-the-badge)
@@ -36,6 +36,7 @@ Thanks goes to these wonderful people
 <table>
   <tr>
     <td align="center"><a href="https://github.com/ankitgauri26"><img src="https://avatars.githubusercontent.com/u/22481268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ankitgauri26</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=ankitgauri26" title="Code">💻</a></td>
+    <td align="center"><a href="https://rohangupta.xyz/"><img src="https://avatars.githubusercontent.com/u/39908472?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Code">💻</a> <a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-DemonDaddy22" title="Design">🎨</a> <a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Documentation">📖</a></td>
   </tr>
 </table>
 
