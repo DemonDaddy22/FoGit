@@ -19,11 +19,6 @@ Please mark the relevant options.
 
 Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration.
 
-**Test Configuration**:
-
-- Node version:
-- Hardware:
-
 ## Checklist
 
 - [ ] My code follows the style guidelines of this project
@@ -31,4 +26,3 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] I have checked my code and corrected any misspellings
