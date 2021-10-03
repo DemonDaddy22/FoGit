@@ -17,7 +17,7 @@ export const isEmptyString = <T,>(value: string | T): boolean =>
  *
  */
 export const isValidNumber = <T,>(value: number | string | T): boolean =>
-    !isNaN(Number(value));
+ typeof value === 'number';
 
 /**
  *
