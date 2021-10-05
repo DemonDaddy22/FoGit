@@ -1,3 +1,5 @@
+@import '../../constants/styles.scss';
+
 .header {
     position: relative;
     font-family: 'Rock Salt', cursive;
@@ -17,17 +19,17 @@
     }
 
     & span:first-of-type {
-        color: #FFF;
+        color: $light;
     }
     
     & span:last-of-type {
-        color: #44DD66;
+        color: $accent-green;
     }
 }
 
 .headerOverlay {
     position: absolute;
-    background-color: rgba($color: #44DD66, $alpha: 0.1);
+    background-color: rgba($color: $accent-green, $alpha: 0.1);
     height: 2rem;
     width: calc(100% + 3rem);
     bottom: 20%;
