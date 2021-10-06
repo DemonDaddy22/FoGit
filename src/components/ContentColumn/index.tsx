@@ -8,6 +8,8 @@ interface IContentColumnProps {
     columnClass?: string;
     titleStyle?: React.CSSProperties;
     titleClass?: string;
+    wrapperStyle?: React.CSSProperties;
+    wrapperClass?: string;
 }
 
 const ContentColumn: React.FC<IContentColumnProps> = ({
@@ -17,13 +19,24 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
     titleClass,
     columnStyle,
     columnClass,
+    wrapperStyle,
+    wrapperClass,
 }) => {
     return (
-        <div className={classes.columnWrapper}>
-            <div className={`${titleClass}`} style={titleStyle}>
+        <div
+            className={`${classes.columnWrapper} ${wrapperClass}`}
+            style={wrapperStyle}
+        >
+            <div
+                className={`${classes.columnTitle} ${titleClass}`}
+                style={titleStyle}
+            >
                 {title}
             </div>
-            <div className={`${columnClass}`} style={columnStyle}>
+            <div
+                className={`${classes.column} ${columnClass}`}
+                style={columnStyle}
+            >
                 {data?.length ? 'Data' : 'No Data'}
             </div>
         </div>

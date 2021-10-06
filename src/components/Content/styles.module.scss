@@ -1,0 +1,12 @@
+.contentWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1500px;
+        gap: 0;
+    }
+}
