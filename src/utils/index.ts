@@ -39,7 +39,7 @@ export const isEmptyList = <T,>(obj: Array<T> | T): boolean =>
  *
  */
 export const isEmptyObject = <T,>(obj: Object | T): boolean =>
-    typeof obj === 'object' &&
-    obj !== null &&
-    !Array.isArray(obj) &&
+    !obj ||
+    typeof obj !== 'object' ||
+    Array.isArray(obj) ||
     Object.keys(obj).length === 0;
