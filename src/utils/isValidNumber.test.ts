@@ -19,8 +19,8 @@ test('isValidNumber on numbers', () => {
     expect(isValidNumber(0)).toBe(true);
     expect(isValidNumber(-1)).toBe(true);
     expect(isValidNumber(1)).toBe(true);
-    expect(isValidNumber('1')).toBe(false);
-    expect(isValidNumber('-1')).toBe(false);
+    expect(isValidNumber('1')).toBe(true);
+    expect(isValidNumber('-1')).toBe(true);
 });
 
 test('isValidNumber on boolean values', () => {
