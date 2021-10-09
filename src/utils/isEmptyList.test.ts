@@ -1,33 +1,33 @@
 import { isEmptyList } from '../utils';
 
 test('isEmptyList on empty string', () => {
-    expect(isEmptyList('')).toBe(false);
+    expect(isEmptyList('')).toBe(true);
 });
 
 test('isEmptyList on non-empty string', () => {
-    expect(isEmptyList('lorem ipsum')).toBe(false);
+    expect(isEmptyList('lorem ipsum')).toBe(true);
 });
 
 test('isEmptyList on null and undefined values', () => {
-    expect(isEmptyList(null)).toBe(false);
-    expect(isEmptyList(undefined)).toBe(false);
-    expect(isEmptyList('null')).toBe(false);
-    expect(isEmptyList('undefined')).toBe(false);
+    expect(isEmptyList(null)).toBe(true);
+    expect(isEmptyList(undefined)).toBe(true);
+    expect(isEmptyList('null')).toBe(true);
+    expect(isEmptyList('undefined')).toBe(true);
 });
 
 test('isEmptyList on numbers', () => {
-    expect(isEmptyList(0)).toBe(false);
-    expect(isEmptyList(-1)).toBe(false);
-    expect(isEmptyList(1)).toBe(false);
-    expect(isEmptyList('1')).toBe(false);
-    expect(isEmptyList('-1')).toBe(false);
+    expect(isEmptyList(0)).toBe(true);
+    expect(isEmptyList(-1)).toBe(true);
+    expect(isEmptyList(1)).toBe(true);
+    expect(isEmptyList('1')).toBe(true);
+    expect(isEmptyList('-1')).toBe(true);
 });
 
 test('isEmptyList on boolean values', () => {
-    expect(isEmptyList(true)).toBe(false);
-    expect(isEmptyList(false)).toBe(false);
-    expect(isEmptyList('true')).toBe(false);
-    expect(isEmptyList('false')).toBe(false);
+    expect(isEmptyList(true)).toBe(true);
+    expect(isEmptyList(false)).toBe(true);
+    expect(isEmptyList('true')).toBe(true);
+    expect(isEmptyList('false')).toBe(true);
 });
 
 test('isEmptyList on lists', () => {
@@ -36,6 +36,6 @@ test('isEmptyList on lists', () => {
 });
 
 test('isEmptyList on objects', () => {
-    expect(isEmptyList({})).toBe(false);
-    expect(isEmptyList({ key1: 'value1', key2: 'value2' })).toBe(false);
+    expect(isEmptyList({})).toBe(true);
+    expect(isEmptyList({ key1: 'value1', key2: 'value2' })).toBe(true);
 });

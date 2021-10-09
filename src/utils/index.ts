@@ -29,7 +29,7 @@ export const isValidNumber = <T,>(value: number | string | T): boolean =>
  *
  */
 export const isEmptyList = <T,>(obj: Array<T> | T): boolean =>
-    Array.isArray(obj) && obj.length === 0;
+    !Array.isArray(obj) || (Array.isArray(obj) && obj.length === 0);
 
 /**
  *
