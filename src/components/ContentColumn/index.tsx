@@ -1,7 +1,10 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
+import ContentItem from '../ContentItem';
 import classes from './styles.module.scss';
 
 interface IContentColumnProps {
+    color?: string;
     title: string;
     data: Array<any>;
     columnStyle?: React.CSSProperties;
@@ -12,7 +15,9 @@ interface IContentColumnProps {
     wrapperClass?: string;
 }
 
+// TODO - handle no data case
 const ContentColumn: React.FC<IContentColumnProps> = ({
+    color,
     title,
     data,
     titleStyle,
@@ -37,7 +42,11 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                 className={`${classes.column} ${columnClass}`}
                 style={columnStyle}
             >
-                {data?.length ? 'Data' : 'No Data'}
+                {data?.length
+                    ? data?.map((item) => (
+                        <ContentItem key={item?.id} data={item} color={color} />
+                    ))
+                    : 'No Data'}
             </div>
         </div>
     );
