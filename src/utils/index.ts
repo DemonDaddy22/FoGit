@@ -17,8 +17,6 @@ export const isEmptyString = <T,>(value: string | T): boolean =>
  *
  */
 export const isValidNumber = <T,>(value: number | string | T): boolean =>
-    ['number', 'string'].includes(typeof value) &&
-    value !== '' &&
     !isNaN(Number(value));
 
 /**
