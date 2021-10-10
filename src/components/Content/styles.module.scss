@@ -15,26 +15,55 @@
 
 .columnFirst {
     border-color: $accent-orange;
-    border-right: 0px solid transparent;
+    box-shadow: 0 0 24px rgba($color: $accent-orange, $alpha: 0.5);
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        clip-path: inset(-24px 0 -24px -24px);
+    }
+}
+
+.columnTitleFirst {
+    color: $accent-orange;
 }
 
 .columnMiddle {
     border-color: $accent-purple;
+    box-shadow: 0 0 24px rgba($color: $accent-purple, $alpha: 0.5);
+}
+
+.columnTitleMiddle {
+    color: $accent-purple;
 }
 
 .columnLast {
     border-color: $accent-blue;
-    border-left: 0px solid transparent;
+    box-shadow: 0 0 24px rgba($color: $accent-blue, $alpha: 0.5);
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        clip-path: inset(-24px -24px -24px 0);
+    }
+}
+
+.columnTitleLast {
+    color: $accent-blue;
 }
 
 @media screen and (min-height: 800px) and (min-width: 1200px) {
     .columnWrapperFirst {
         height: 36rem;
-        margin: 2rem 0;
+        margin-top: 3rem;
     }
 
     .columnWrapperLast {
         height: 36rem;
-        margin: 2rem 0;
+        margin-top: 3rem;
+    }
+
+    .columnFirst {
+        border-right: 0px solid transparent;
+    }
+
+    .columnLast {
+        border-left: 0px solid transparent;
     }
 }

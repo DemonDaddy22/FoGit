@@ -1,6 +1,7 @@
 import React from 'react';
 import ContentColumn from '../ContentColumn';
 import classes from './styles.module.scss';
+import user from '../../data';
 
 interface IContentProps {}
 
@@ -10,19 +11,22 @@ const Content: React.FC<IContentProps> = () => {
             <ContentColumn
                 wrapperClass={classes.columnWrapperFirst}
                 columnClass={classes.columnFirst}
+                titleClass={classes.columnTitleFirst}
                 title="Leaders"
-                data={[]}
+                data={[user, user, user]}
             />
             <ContentColumn
                 columnClass={classes.columnMiddle}
+                titleClass={classes.columnTitleMiddle}
                 title="2-Way Street"
-                data={[]}
+                data={[user, user, user, user, user, user]}
             />
             <ContentColumn
                 wrapperClass={classes.columnWrapperLast}
                 columnClass={classes.columnLast}
+                titleClass={classes.columnTitleLast}
                 title="Supporters"
-                data={[]}
+                data={[user, user, user, user]}
             />
         </div>
     );
