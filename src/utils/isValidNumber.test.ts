@@ -1,7 +1,7 @@
 import { isValidNumber } from '../utils';
 
 test('isValidNumber on empty string', () => {
-    expect(isValidNumber('')).toBe(true);
+    expect(isValidNumber('')).toBe(false);
 });
 
 test('isValidNumber on non-empty string', () => {
@@ -9,7 +9,7 @@ test('isValidNumber on non-empty string', () => {
 });
 
 test('isValidNumber on null and undefined values', () => {
-    expect(isValidNumber(null)).toBe(true);
+    expect(isValidNumber(null)).toBe(false);
     expect(isValidNumber(undefined)).toBe(false);
     expect(isValidNumber('null')).toBe(false);
     expect(isValidNumber('undefined')).toBe(false);
@@ -24,14 +24,14 @@ test('isValidNumber on numbers', () => {
 });
 
 test('isValidNumber on boolean values', () => {
-    expect(isValidNumber(true)).toBe(true);
-    expect(isValidNumber(false)).toBe(true);
+    expect(isValidNumber(true)).toBe(false);
+    expect(isValidNumber(false)).toBe(false);
     expect(isValidNumber('true')).toBe(false);
     expect(isValidNumber('false')).toBe(false);
 });
 
 test('isValidNumber on lists', () => {
-    expect(isValidNumber([])).toBe(true);
+    expect(isValidNumber([])).toBe(false);
     expect(isValidNumber([1, 2, 'lorem ipsum'])).toBe(false);
 });
 
