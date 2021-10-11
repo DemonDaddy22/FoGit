@@ -54,7 +54,7 @@ export const truncateStringToLength = (
     value: string,
     length: number
 ): string => {
-    if (!value || !length || isEmptyString(value) || !isValidNumber(length))
+    if (isEmptyString(value) || !isValidNumber(length) || length <= 0)
         return value;
     return value?.length < length ? value : `${value?.substring(0, length)}...`;
 };
