@@ -25,6 +25,15 @@
         "design",
         "doc"
       ]
+    },
+    {
+      "login": "KelseyJr",
+      "name": "Kelsey Torres de Freitas Júnior",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19155140?v=4",
+      "profile": "https://www.linkedin.com/in/kelseyjunior/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
