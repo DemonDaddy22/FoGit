@@ -14,7 +14,7 @@ const Content: React.FC<IContentProps> = () => {
                 columnClass={classes.columnFirst}
                 titleClass={classes.columnTitleFirst}
                 title="Leaders"
-                data={[user, user, user]}
+                data={[]}
                 color={COLORS.ACCENT_ORANGE}
             />
             <ContentColumn

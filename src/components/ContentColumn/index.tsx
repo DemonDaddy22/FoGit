@@ -15,7 +15,6 @@ interface IContentColumnProps {
     wrapperClass?: string;
 }
 
-// TODO - handle no data case
 const ContentColumn: React.FC<IContentColumnProps> = ({
     color,
     title,
@@ -46,7 +45,7 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                     ? data?.map((item) => (
                         <ContentItem key={item?.id} data={item} color={color} />
                     ))
-                    : 'No Data'}
+                    : <div className={classes.noData} style={{ color }}>Nothing to show 🤷🏻‍♂️</div>}
             </div>
         </div>
     );

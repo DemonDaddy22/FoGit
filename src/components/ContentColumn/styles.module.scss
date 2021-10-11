@@ -11,6 +11,7 @@
 }
 
 .column {
+    position: relative;
     border: 4px solid $light;
     border-radius: 0.5rem;
     width: inherit;
@@ -26,7 +27,26 @@
 .columnTitle {
     color: $accent-pink;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: -0.5px;
     text-transform: uppercase;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        font-size: 1.75rem;
+    }
+}
+
+.noData {
+    color: $accent-pink;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        font-size: 1.5rem;
+    }
 }
