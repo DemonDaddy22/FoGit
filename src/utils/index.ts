@@ -50,10 +50,10 @@ export const isEmptyObject = <T,>(obj: Object | T): boolean =>
  * @returns truncated `value` if its length is greater than or equal to `length`
  *
  */
-export const truncateStringToLength = <T,>(
-    value: string | T,
-    length: number | T
-): string | T => {
+export const truncateStringToLength = (
+    value: string,
+    length: number
+): string => {
     if (!value || !length || isEmptyString(value) || !isValidNumber(length))
         return value;
     return value?.length < length ? value : `${value?.substring(0, length)}...`;
