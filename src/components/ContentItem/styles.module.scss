@@ -1,0 +1,57 @@
+.itemWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent;
+    transition: color 0.15s, background-color 0.15s;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    &:hover .itemUsername {
+        text-decoration: underline;
+    }
+}
+
+.itemAvatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.itemTextWrapper {
+    display: flex;
+    gap: 0.25rem;
+    align-items: flex-end;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        gap: 0.35rem;
+    }
+}
+
+.itemUsername {
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        font-size: 1rem;
+    }
+}
+
+.itemName {
+    display: none;
+
+    @media screen and (min-height: 800px) and (min-width: 1500px) {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 400;
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}

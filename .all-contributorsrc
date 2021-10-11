@@ -6,15 +6,6 @@
   "commit": false,
   "contributors": [
     {
-      "login": "ankitgauri26",
-      "name": "ankitgauri26",
-      "avatar_url": "https://avatars.githubusercontent.com/u/22481268?v=4",
-      "profile": "https://github.com/ankitgauri26",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
       "login": "DemonDaddy22",
       "name": "Rohan Gupta",
       "avatar_url": "https://avatars.githubusercontent.com/u/39908472?v=4",
@@ -24,6 +15,15 @@
         "ideas",
         "design",
         "doc"
+      ]
+    },
+    {
+      "login": "ankitgauri26",
+      "name": "ankitgauri26",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22481268?v=4",
+      "profile": "https://github.com/ankitgauri26",
+      "contributions": [
+        "code"
       ]
     },
     {

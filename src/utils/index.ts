@@ -41,3 +41,20 @@ export const isEmptyObject = <T,>(obj: Object | T): boolean =>
     typeof obj !== 'object' ||
     Array.isArray(obj) ||
     Object.keys(obj).length === 0;
+
+/**
+ *
+ * @function truncateStringToLength - Truncates passed value to specified length
+ * @param {string} value
+ * @param {number} length
+ * @returns truncated `value` if its length is greater than or equal to `length`
+ *
+ */
+export const truncateStringToLength = (
+    value: string,
+    length: number
+): string => {
+    if (isEmptyString(value) || !isValidNumber(length) || length <= 0)
+        return value;
+    return value?.length < length ? value : `${value?.substring(0, length)}...`;
+};
