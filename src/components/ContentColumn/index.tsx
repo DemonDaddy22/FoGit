@@ -42,8 +42,8 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                 style={columnStyle}
             >
                 {data?.length
-                    ? data?.map((item) => (
-                        <ContentItem key={item?.id} data={item} color={color} />
+                    ? data?.map((item, i) => (
+                        <ContentItem key={i} data={item} color={color} />
                     ))
                     : <div className={classes.noData} style={{ color }}>Nothing to show 🤷🏻‍♂️</div>}
             </div>
