@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ContentColumn from '../ContentColumn';
 import classes from './styles.module.scss';
 import user from '../../data';
 import { COLORS, GITHUB_BASE_URI } from '../../constants';
 import axios from 'axios';
+import useAsyncExec from '../../hooks/useAsyncExec';
 
 interface IContentProps {}
 
@@ -15,15 +16,31 @@ interface IContentProps {}
 // TODO - following and followers APIs send paginated data, need to get complete data for further processing
 // TODO - must fetch following and followers list in parallel since the data is independent of each other
 const Content: React.FC<IContentProps> = () => {
+    const [followers, setFollowers] = useState<number>(0);
+    const [following, setFollowing] = useState<number>(0);
+    const [getFollowers, setGetFollowers] = useState<boolean>(false);
+    const [getFollowing, setGetFollowing] = useState<boolean>(false);
+
     const fetchUserData = useCallback(async () => {
         const userResponse = await axios.get(`${GITHUB_BASE_URI}/DemonDaddy22`);
         const { followers = 0, following = 0 } = userResponse?.data || {};
-        console.log({ followers, following });
+        setFollowers(followers);
+        setFollowing(following);
+        setGetFollowers(true);
+        setGetFollowing(true);
+        useAsyncExec(() => {
+            setGetFollowers(false);
+            setGetFollowing(false);
+        });
     }, []);
 
     useEffect(() => {
         fetchUserData();
     }, []);
+
+    useEffect(() => {}, [getFollowers, followers]);
+
+    useEffect(() => {}, [getFollowing, following]);
 
     return (
         <div className={classes.contentWrapper}>
