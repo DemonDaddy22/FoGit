@@ -60,3 +60,14 @@ export const truncateStringToLength = (
         return value;
     return value?.length < length ? value : `${value?.substring(0, length)}...`;
 };
+
+/**
+ *
+ * @function createListOfSize - Creates a list of length `size` containing integers from `start`
+ * @param {number} size - specifies size of list
+ * @param {number} start - specifies first value of list
+ * @returns list containing integers from start to start + size - 1
+ *
+ */
+export const createListOfSize = (size: number, start: number = 1): number[] =>
+    size > 0 ? Array.from(Array(size)).map(() => start++) : [];

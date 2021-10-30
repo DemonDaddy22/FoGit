@@ -9,3 +9,7 @@ export const COLORS: {
     LIGHT: '#FEFEFE',
     DARK: '#191C20',
 };
+
+export const GITHUB_BASE_URI: string = 'https://api.github.com/users';
+
+export const PAGE_SIZE: number = 100;
