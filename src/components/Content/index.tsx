@@ -23,14 +23,8 @@ interface IData {
     supporters: Array<any>;
 }
 
-// TODO - first get the followers and following counts from users API -                                             DONE
-// TODO - make parallel calls for paginated data since we are not concerned with order of data                      DONE
-// TODO - simply state variables by arranging followers and following data into objects                             DONE
-// TODO - take out loading and error so that same variables can be used for all API calls
-// TODO - if any fetch call fails, prompt the user to retry by displaying an error
-// TODO - populate the data lists with fetched data
-// TODO - following and followers APIs send paginated data, need to get complete data for further processing
-// TODO - must fetch following and followers list in parallel since the data is independent of each other
+// TODO - move out loading and error, and pass them to content columns
+
 const Content: React.FC<IContentProps> = () => {
     const [getFollowers, setGetFollowers] = useState<boolean>(false);
     const [getFollowing, setGetFollowing] = useState<boolean>(false);

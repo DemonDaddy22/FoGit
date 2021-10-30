@@ -1,11 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import ExternalLink from '../../assets/icons/ExternalLink';
 import { COLORS } from '../../constants';
-import {
-    isEmptyObject,
-    isEmptyString,
-    truncateStringToLength,
-} from '../../utils';
+import { isEmptyObject, truncateStringToLength } from '../../utils';
 import classes from './styles.module.scss';
 
 interface IContentItemProps {
