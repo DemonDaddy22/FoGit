@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react';
+import ExternalLink from '../../assets/icons/ExternalLink';
 import { COLORS } from '../../constants';
 import {
     isEmptyObject,
@@ -56,13 +57,9 @@ const ContentItem: React.FC<IContentItemProps> = ({
             />
             <div className={classes.itemTextWrapper}>
                 <div className={classes.itemUsername}>
-                    {truncateStringToLength(data?.login, 25)}
+                    {truncateStringToLength(data?.login, 30)}
                 </div>
-                <div className={classes.itemName}>
-                    {!isEmptyString(data?.name)
-                        ? `(${truncateStringToLength(data?.name, 18)})`
-                        : ''}
-                </div>
+                <ExternalLink className={classes.itemIcon} />
             </div>
         </div>
     ) : null;

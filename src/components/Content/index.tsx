@@ -1,7 +1,8 @@
+/* eslint-disable object-curly-newline */
 import React, { useCallback, useEffect, useState } from 'react';
+import { differenceBy, intersectionBy } from 'lodash';
 import ContentColumn from '../ContentColumn';
 import classes from './styles.module.scss';
-import user from '../../data';
 import { COLORS, GITHUB_BASE_URI, PAGE_SIZE } from '../../constants';
 import axios from 'axios';
 import useAsyncExec from '../../hooks/useAsyncExec';
@@ -9,11 +10,17 @@ import { createListOfSize } from '../../utils';
 
 interface IContentProps {}
 
-interface IContent {
+interface IAPIContent {
     count: number;
     data: Array<any>;
     loading: boolean;
     error: any;
+}
+
+interface IData {
+    leaders: Array<any>;
+    mutual: Array<any>;
+    supporters: Array<any>;
 }
 
 // TODO - first get the followers and following counts from users API -                                             DONE
@@ -27,17 +34,22 @@ interface IContent {
 const Content: React.FC<IContentProps> = () => {
     const [getFollowers, setGetFollowers] = useState<boolean>(false);
     const [getFollowing, setGetFollowing] = useState<boolean>(false);
-    const [followers, setFollowers] = useState<IContent>({
+    const [followers, setFollowers] = useState<IAPIContent>({
         count: 0,
         data: [],
         loading: false,
         error: null,
     });
-    const [following, setFollowing] = useState<IContent>({
+    const [following, setFollowing] = useState<IAPIContent>({
         count: 0,
         data: [],
         loading: false,
         error: null,
+    });
+    const [data, setData] = useState<IData>({
+        leaders: [],
+        mutual: [],
+        supporters: [],
     });
 
     const fetchUserData = useCallback(async () => {
@@ -128,6 +140,13 @@ const Content: React.FC<IContentProps> = () => {
     }, []);
 
     useEffect(() => {
+        const supporters = differenceBy(followers.data, following.data, 'id');
+        const leaders = differenceBy(following.data, followers.data, 'id');
+        const mutual = intersectionBy(followers.data, following.data, 'id');
+        setData({ supporters, leaders, mutual });
+    }, [followers.data, following.data]);
+
+    useEffect(() => {
         fetchUserData();
     }, [fetchUserData]);
 
@@ -150,14 +169,14 @@ const Content: React.FC<IContentProps> = () => {
                 columnClass={classes.columnFirst}
                 titleClass={classes.columnTitleFirst}
                 title="Leaders"
-                data={[]}
+                data={data.leaders}
                 color={COLORS.ACCENT_ORANGE}
             />
             <ContentColumn
                 columnClass={classes.columnMiddle}
                 titleClass={classes.columnTitleMiddle}
                 title="2-Way Street"
-                data={[user, user, user, user, user, user]}
+                data={data.mutual}
                 color={COLORS.ACCENT_PURPLE}
             />
             <ContentColumn
@@ -165,7 +184,7 @@ const Content: React.FC<IContentProps> = () => {
                 columnClass={classes.columnLast}
                 titleClass={classes.columnTitleLast}
                 title="Supporters"
-                data={[user, user, user, user]}
+                data={data.supporters}
                 color={COLORS.ACCENT_BLUE}
             />
         </div>
