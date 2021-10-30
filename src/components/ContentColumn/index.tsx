@@ -6,11 +6,14 @@ import classes from './styles.module.scss';
 interface IContentColumnProps {
     color?: string;
     title: string;
+    subtitle?: string;
     data: Array<any>;
     columnStyle?: React.CSSProperties;
     columnClass?: string;
     titleStyle?: React.CSSProperties;
     titleClass?: string;
+    subtitleStyle?: React.CSSProperties;
+    subtitleClass?: string;
     wrapperStyle?: React.CSSProperties;
     wrapperClass?: string;
 }
@@ -18,9 +21,12 @@ interface IContentColumnProps {
 const ContentColumn: React.FC<IContentColumnProps> = ({
     color,
     title,
+    subtitle,
     data,
     titleStyle,
     titleClass,
+    subtitleStyle,
+    subtitleClass,
     columnStyle,
     columnClass,
     wrapperStyle,
@@ -36,6 +42,12 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                 style={titleStyle}
             >
                 {title}
+            </div>
+            <div
+                className={`${classes.columnSubtitle} ${subtitleClass}`}
+                style={subtitleStyle}
+            >
+                {subtitle}
             </div>
             <div
                 className={`${classes.column} ${columnClass}`}

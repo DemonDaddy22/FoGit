@@ -168,14 +168,18 @@ const Content: React.FC<IContentProps> = () => {
                 wrapperClass={classes.columnWrapperFirst}
                 columnClass={classes.columnFirst}
                 titleClass={classes.columnTitleFirst}
+                subtitleClass={classes.columnSubtitleFirst}
                 title="Leaders"
+                subtitle="Worth following them even if they don't follow back"
                 data={data.leaders}
                 color={COLORS.ACCENT_ORANGE}
             />
             <ContentColumn
                 columnClass={classes.columnMiddle}
                 titleClass={classes.columnTitleMiddle}
+                subtitleClass={classes.columnSubtitleMiddle}
                 title="2-Way Street"
+                subtitle="Helping each other grow together"
                 data={data.mutual}
                 color={COLORS.ACCENT_PURPLE}
             />
@@ -183,7 +187,9 @@ const Content: React.FC<IContentProps> = () => {
                 wrapperClass={classes.columnWrapperLast}
                 columnClass={classes.columnLast}
                 titleClass={classes.columnTitleLast}
+                subtitleClass={classes.columnSubtitleLast}
                 title="Supporters"
+                subtitle="Rooting for you all the way"
                 data={data.supporters}
                 color={COLORS.ACCENT_BLUE}
             />

@@ -4,7 +4,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 3rem;
 
     @media screen and (min-height: 800px) and (min-width: 1200px) {
         grid-template-columns: 1fr 1fr 1fr;
@@ -26,6 +26,12 @@
     color: $accent-orange;
 }
 
+.columnSubtitleFirst {
+    color: $accent-orange;
+    font-size: 0.75rem;
+    letter-spacing: -0.15px;
+}
+
 .columnMiddle {
     border-color: $accent-purple;
     box-shadow: 0 0 24px rgba($color: $accent-purple, $alpha: 0.5);
@@ -33,6 +39,12 @@
 
 .columnTitleMiddle {
     color: $accent-purple;
+}
+
+.columnSubtitleMiddle {
+    color: $accent-purple;
+    font-size: 0.75rem;
+    letter-spacing: -0.15px;
 }
 
 .columnLast {
@@ -46,6 +58,12 @@
 
 .columnTitleLast {
     color: $accent-blue;
+}
+
+.columnSubtitleLast {
+    color: $accent-blue;
+    font-size: 0.75rem;
+    letter-spacing: -0.15px;
 }
 
 @media screen and (min-height: 800px) and (min-width: 1200px) {
