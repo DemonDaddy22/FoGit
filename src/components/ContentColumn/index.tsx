@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import ContentItem from '../ContentItem';
+import Loader from '../Loader';
 import classes from './styles.module.scss';
 
 interface IContentColumnProps {
@@ -57,7 +58,7 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                     ? data?.map((item, index) => (
                         <ContentItem key={item?.id || (index + 1)} data={item} color={color} />
                     ))
-                    : <div className={classes.noData} style={{ color }}>Nothing to show 🤷🏻‍♂️</div>}
+                    : <div className={classes.noData} style={{ color }}><Loader color={color}></Loader></div>}
             </div>
         </div>
     );
