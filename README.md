@@ -37,6 +37,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://rohangupta.xyz/"><img src="https://avatars.githubusercontent.com/u/39908472?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Code">💻</a> <a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-DemonDaddy22" title="Design">🎨</a> <a href="https://github.com/DemonDaddy22/FoGit/commits?author=DemonDaddy22" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/ankitgauri26"><img src="https://avatars.githubusercontent.com/u/22481268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ankitgauri26</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=ankitgauri26" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/kelseyjunior/"><img src="https://avatars.githubusercontent.com/u/19155140?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kelsey Torres de Freitas Júnior</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=KelseyJr" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/selamanse"><img src="https://avatars.githubusercontent.com/u/3129224?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Selamanse</b></sub></a><br /><a href="https://github.com/DemonDaddy22/FoGit/commits?author=selamanse" title="Code">💻</a></td>
   </tr>
 </table>
 
