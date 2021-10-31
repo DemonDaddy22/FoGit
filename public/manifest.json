@@ -1,6 +1,6 @@
 {
     "short_name": "FoGit",
-    "name": "Let's you find out who all are not following back the user on GitHub among other things",
+    "description": "Let's you find out who all are not following back the user on GitHub among other things",
     "icons": [
         {
             "src": "logo.png",
