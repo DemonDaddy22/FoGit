@@ -1,30 +1,45 @@
 @import '../../constants/styles.scss';
 
+.headerContainer {
+    width: 100%;
+    padding: 2rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10rem 2rem;
+    }
+}
+
 .header {
-    position: relative;
     font-family: 'Rock Salt', cursive;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 1.5rem auto;
-    text-align: center;
-    width: fit-content;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $accent-green;
+}
 
-    @media screen and (min-width: 1024px) {
-        font-size: 3rem;
+.iconsContainer {
+    display: inline-flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        gap: 1.75rem;
     }
+}
 
-    @media screen and (min-width: 1500px) {
-        font-size: 3.5rem;
-        margin: 2.5rem auto;
-    }
+.icon {
+    cursor: pointer;
+    filter: saturate(1);
+    transition: filter 0.15s, transform 0.15s;
 
-    & span:first-of-type {
-        color: $light;
-        text-shadow: 0 0 32px rgba($color: $accent-green, $alpha: 0.5), 0 0 48px rgba($color: $accent-green, $alpha: 0.75);
-    }
-
-    & span:last-of-type {
-        color: $accent-pink;
-        text-shadow: 0 0 32px rgba($color: $accent-pink, $alpha: 0.5), 0 0 48px rgba($color: $accent-pink, $alpha: 0.75);
+    &:hover {
+        filter: saturate(0.25);
+        transform: translateY(-0.25rem);
     }
 }
