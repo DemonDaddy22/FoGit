@@ -1,40 +1,30 @@
 import React from 'react';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import { default as Rls } from 'react-loader-spinner';
 import '../../constants/styles.scss';
+import classes from './styles.module.scss';
 
 interface ILoaderProps {
-    type?:
-        | 'Audio'
-        | 'BallTriangle'
-        | 'Bars'
-        | 'Circles'
-        | 'Grid'
-        | 'Hearts'
-        | 'Oval'
-        | 'Puff'
-        | 'Rings'
-        | 'TailSpin'
-        | 'ThreeDots'
-        | 'Watch'
-        | 'RevolvingDot'
-        | 'Triangle'
-        | 'Plane'
-        | 'MutatingDots'
-        | 'CradleLoader';
     color?: string;
-    height?: number;
-    width?: number;
+    size?: number;
 }
 
-const Loader: React.FC<ILoaderProps> = ({
-    type = 'Circles',
-    color = '#EE7C11',
-    height = 40,
-    width = 40,
-}) => {
+const Loader: React.FC<ILoaderProps> = ({ color = '#EE7C11', size = 40 }) => {
     return (
-        <Rls visible type={type} color={color} height={height} width={width} />
+        <div
+            style={{ height: size + `px`, width: size + `px` }}
+            data-testid="loader-spinner"
+            className={classes.spinner}
+        >
+            <div
+                data-testid="loader-dot1"
+                style={{ backgroundColor: color }}
+                className={classes.dot1}
+            ></div>
+            <div
+                data-testid="loader-dot2"
+                style={{ backgroundColor: color }}
+                className={classes.dot2}
+            ></div>
+        </div>
     );
 };
 
