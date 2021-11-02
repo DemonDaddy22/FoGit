@@ -1,5 +1,9 @@
 import { createListOfSize } from '.';
 
+test('createListOfSize -1', () => {
+    expect(createListOfSize(-1)).toEqual([]);
+});
+
 test('createListOfSize 4 and begin with 2', () => {
     expect(createListOfSize(4, 2)).toEqual([2, 3, 4, 5]);
 });

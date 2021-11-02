@@ -13,8 +13,6 @@ interface IContentProps {}
 interface IAPIContent {
     count: number;
     data: Array<any>;
-    loading: boolean;
-    error: any;
 }
 
 interface IData {
@@ -28,17 +26,15 @@ interface IData {
 const Content: React.FC<IContentProps> = () => {
     const [getFollowers, setGetFollowers] = useState<boolean>(false);
     const [getFollowing, setGetFollowing] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<any>(null);
     const [followers, setFollowers] = useState<IAPIContent>({
         count: 0,
         data: [],
-        loading: false,
-        error: null,
     });
     const [following, setFollowing] = useState<IAPIContent>({
         count: 0,
         data: [],
-        loading: false,
-        error: null,
     });
     const [data, setData] = useState<IData>({
         leaders: [],
@@ -47,6 +43,7 @@ const Content: React.FC<IContentProps> = () => {
     });
 
     const fetchUserData = useCallback(async () => {
+        setLoading(true);
         try {
             const userResponse = await axios.get(
                 `${GITHUB_BASE_URI}/DemonDaddy22`
@@ -62,18 +59,19 @@ const Content: React.FC<IContentProps> = () => {
             }));
             setGetFollowers(true);
             setGetFollowing(true);
+            setError(null);
             useAsyncExec(() => {
                 setGetFollowers(false);
                 setGetFollowing(false);
             });
-        } catch (err) {}
+        } catch (err) {
+            setError(err);
+        }
+        setLoading(false);
     }, []);
 
     const fetchFollowers = useCallback(async (followersCount: number) => {
-        setFollowers((prevFollowers) => ({
-            ...prevFollowers,
-            loading: true,
-        }));
+        setLoading(true);
         const pages = Math.ceil(followersCount / PAGE_SIZE);
         const pageList = createListOfSize(pages);
         try {
@@ -84,28 +82,19 @@ const Content: React.FC<IContentProps> = () => {
                     })
                 )
             );
+            setError(null);
             setFollowers((prevFollowers) => ({
                 ...prevFollowers,
                 data: pagesData?.[0]?.data || [],
-                error: null,
             }));
         } catch (error) {
-            setFollowers((prevFollowers) => ({
-                ...prevFollowers,
-                error,
-            }));
+            setError(error);
         }
-        setFollowers((prevFollowers) => ({
-            ...prevFollowers,
-            loading: false,
-        }));
+        setLoading(false);
     }, []);
 
     const fetchFollowing = useCallback(async (followingCount: number) => {
-        setFollowing((prevFollowing) => ({
-            ...prevFollowing,
-            loading: true,
-        }));
+        setLoading(true);
         const pages = Math.ceil(followingCount / PAGE_SIZE);
         const pageList = createListOfSize(pages);
         try {
@@ -116,21 +105,15 @@ const Content: React.FC<IContentProps> = () => {
                     })
                 )
             );
+            setError(null);
             setFollowing((prevFollowing) => ({
                 ...prevFollowing,
                 data: pagesData?.[0]?.data || [],
-                error: null,
             }));
         } catch (error) {
-            setFollowing((prevFollowing) => ({
-                ...prevFollowing,
-                error,
-            }));
+            setError(error);
         }
-        setFollowing((prevFollowing) => ({
-            ...prevFollowing,
-            loading: false,
-        }));
+        setLoading(false);
     }, []);
 
     useEffect(() => {
@@ -165,6 +148,8 @@ const Content: React.FC<IContentProps> = () => {
                 subtitleClass={classes.columnSubtitleFirst}
                 title="Leaders"
                 subtitle="Worth following them even if they don't follow back"
+                loading={loading}
+                error={error}
                 data={data.leaders}
                 color={COLORS.ACCENT_ORANGE}
             />
@@ -174,6 +159,8 @@ const Content: React.FC<IContentProps> = () => {
                 subtitleClass={classes.columnSubtitleMiddle}
                 title="2-Way Street"
                 subtitle="Helping each other grow together"
+                loading={loading}
+                error={error}
                 data={data.mutual}
                 color={COLORS.ACCENT_PURPLE}
             />
@@ -184,6 +171,8 @@ const Content: React.FC<IContentProps> = () => {
                 subtitleClass={classes.columnSubtitleLast}
                 title="Supporters"
                 subtitle="Rooting for you all the way"
+                loading={loading}
+                error={error}
                 data={data.supporters}
                 color={COLORS.ACCENT_BLUE}
             />

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Loader from '.';
 
 describe('<Navigation/>', () => {
@@ -9,10 +9,10 @@ describe('<Navigation/>', () => {
         expect(testSpinner.className).toEqual('spinner');
         expect(testSpinner).toHaveStyle('width: 40px; height: 40px');
         expect(testSpinner.firstChild).toHaveStyle(
-            'background-color: rgb(238, 124, 17)'
+            'background-color: rgb(254, 254, 254)'
         );
         expect(testSpinner.lastChild).toHaveStyle(
-            'background-color: rgb(238, 124, 17)'
+            'background-color: rgb(254, 254, 254)'
         );
     });
 

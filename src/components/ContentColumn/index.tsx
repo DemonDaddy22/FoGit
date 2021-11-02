@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useMemo } from 'react';
+import { isEmptyString } from '../../utils';
 import ContentItem from '../ContentItem';
 import Loader from '../Loader';
 import classes from './styles.module.scss';
@@ -9,6 +10,8 @@ interface IContentColumnProps {
     title: string;
     subtitle?: string;
     data: Array<any>;
+    loading: boolean;
+    error: any;
     columnStyle?: React.CSSProperties;
     columnClass?: string;
     titleStyle?: React.CSSProperties;
@@ -24,6 +27,8 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
     title,
     subtitle,
     data,
+    loading,
+    error,
     titleStyle,
     titleClass,
     subtitleStyle,
@@ -33,6 +38,23 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
     wrapperStyle,
     wrapperClass,
 }) => {
+    const renderContent = useMemo(() => {
+        const errorMessage = error
+            ? `Something went wrong 🥺`
+            : !data?.length
+                ? `Nothing to show 🤷🏻‍♂️`
+                : '';
+        if (!isEmptyString(errorMessage)) {
+            return <div className={classes.noData} style={{ color }}>{errorMessage}</div>;
+        }
+        return data?.map((item, index) => (
+            <ContentItem key={item?.id || (index + 1)} data={item} color={color} />
+        ));
+    }, [
+        data,
+        error,
+    ]);
+
     return (
         <div
             className={`${classes.columnWrapper} ${wrapperClass}`}
@@ -54,11 +76,10 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                 className={`${classes.column} ${columnClass}`}
                 style={columnStyle}
             >
-                {data?.length
-                    ? data?.map((item, index) => (
-                        <ContentItem key={item?.id || (index + 1)} data={item} color={color} />
-                    ))
-                    : <div className={classes.noData} style={{ color }}><Loader color={color}></Loader></div>}
+                {loading ? <div className={classes.loaderWrapper}>
+                    <Loader color={color} />
+                </div> : null}
+                {renderContent}
             </div>
         </div>
     );

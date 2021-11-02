@@ -1,4 +1,5 @@
 import React from 'react';
+import { COLORS } from '../../constants';
 import '../../constants/styles.scss';
 import classes from './styles.module.scss';
 
@@ -7,10 +8,13 @@ interface ILoaderProps {
     size?: number;
 }
 
-const Loader: React.FC<ILoaderProps> = ({ color = '#EE7C11', size = 40 }) => {
+const Loader: React.FC<ILoaderProps> = ({
+    color = COLORS.LIGHT,
+    size = 40,
+}) => {
     return (
         <div
-            style={{ height: size + `px`, width: size + `px` }}
+            style={{ height: size, width: size }}
             data-testid="loader-spinner"
             className={classes.spinner}
         >
