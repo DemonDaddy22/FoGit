@@ -100,7 +100,7 @@ const Content: React.FC<IContentProps> = () => {
         try {
             const pagesData = await Promise.all(
                 pageList.map((page) =>
-                    axios.get(`${GITHUB_BASE_URI}/DemonDaddy22/following`, {
+                    axios.get(`${GITHUB_BASE_URI}/DemonDaddy28124/following`, {
                         params: { page, per_page: PAGE_SIZE },
                     })
                 )
