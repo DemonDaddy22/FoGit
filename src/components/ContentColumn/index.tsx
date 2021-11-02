@@ -2,6 +2,7 @@
 import React, { useMemo } from 'react';
 import { isEmptyString } from '../../utils';
 import ContentItem from '../ContentItem';
+import Loader from '../Loader';
 import classes from './styles.module.scss';
 
 interface IContentColumnProps {
@@ -75,7 +76,9 @@ const ContentColumn: React.FC<IContentColumnProps> = ({
                 className={`${classes.column} ${columnClass}`}
                 style={columnStyle}
             >
-                {loading ? <>Loading...</> : null}
+                {loading ? <div className={classes.loaderWrapper}>
+                    <Loader color={color} />
+                </div> : null}
                 {renderContent}
             </div>
         </div>

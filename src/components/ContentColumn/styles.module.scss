@@ -53,3 +53,10 @@
         font-size: 1.5rem;
     }
 }
+
+.loaderWrapper {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+}
