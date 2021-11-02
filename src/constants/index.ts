@@ -2,7 +2,7 @@ export const COLORS: {
     [key: string]: string;
 } = {
     ACCENT_ORANGE: '#EE7C11',
-    ACCENT_GREEN: '#CDFD02',
+    ACCENT_GREEN: '#83C022',
     ACCENT_PURPLE: '#6844FC',
     ACCENT_PINK: '#F02F75',
     ACCENT_BLUE: '#32BCD1',
