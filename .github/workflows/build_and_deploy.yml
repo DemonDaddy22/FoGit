@@ -1,0 +1,31 @@
+name: Deploy FoGit
+on:
+    push:
+        branches:
+            - master
+jobs:
+    build:
+        env:
+            CI: false
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: Install Packages
+              run: npm install
+            - name: Perform linting
+              run: npm run lint:fix
+            - name: Run tests
+              run: npm run test:ci
+            - name: Deploy Application to GH Pages
+              run: |
+                  git config user.email ${{ secrets.EMAIL }}
+                  git config user.name ${{ secrets.USERNAME }}
+                  git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
+                  npm run deploy
