@@ -17,9 +17,7 @@ to find out
 -   who all are following the user even when the user is not following them
 -   who all are followed by the user and are following back the user
 
-Idea is to complete this project before Hacktoberfest '21 ends. Designs can be
-found [here](design/). One can work on the open issues. Deployment pipeline will
-be set up once the project starts taking some shape.
+Designs can be found [here](design/). One can work on the open issues. A CD workflow has been setup which automatically deploys the website to [https://DemonDaddy22.github.io/FoGit/](https://DemonDaddy22.github.io/FoGit/) whenever new code is pushed or merged into master branch.
 
 Let's make this happen!
 
