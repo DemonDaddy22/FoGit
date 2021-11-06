@@ -2,13 +2,16 @@ import './App.scss';
 import Content from './components/Content';
 import Header from './components/Header';
 import Input from './components/Input';
+import InputContextProvider from './context/InputContext';
 
 const App = () => {
     return (
         <div className="App">
-            <Header />
-            <Input value="hola" />
-            <Content />
+            <InputContextProvider>
+                <Header />
+                <Input value="hola" />
+                <Content />
+            </InputContextProvider>
         </div>
     );
 };

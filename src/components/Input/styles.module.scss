@@ -22,7 +22,7 @@ button {
     margin: 0 auto;
     border-radius: 2px;
     padding: 1.4rem 2rem 1.6rem;
-    background: rgba(57, 63, 84, 0.8);
+    background: $input-bg;
 
     &:after {
         content: "";
@@ -35,25 +35,25 @@ button {
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
         background-position: 0% 0%;
-        background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+        background: linear-gradient(to right, $gradient-purple, $gradient-green, $gradient-yellow, $gradient-green, $gradient-purple, $gradient-green);
         background-size: 500% auto;
         animation: bottomGradient 3s linear infinite;
     }
 
     & input {
         flex-grow: 1;
-        color: #BFD2FF;
+        color: $input-color;
         font-size: 1.8rem;
         line-height: 2.4rem;
         vertical-align: middle;
 
         &::-webkit-input-placeholder {
-            color: #7881A1;
+            color: $input-color-faded;
         }
     }
 
     & .arrowButton {
-        fill: #7881A1;
+        fill: $input-color-faded;
         font-size: 2.4rem;
         line-height: 2.4rem;
         vertical-align: middle;
@@ -65,7 +65,7 @@ button {
             cursor: pointer;
 
             .arrowButton {
-                fill: #BFD2FF;
+                fill: $input-color;
             }
         }
     }
