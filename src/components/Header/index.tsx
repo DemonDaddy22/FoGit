@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import BuyMeACoffee from '../../assets/icons/BuyMeACoffee';
 import GitHub from '../../assets/icons/GitHub';
 import Twitter from '../../assets/icons/Twitter';
@@ -9,13 +9,21 @@ import {
     TWITTER_URL,
     UNSPLASH_URL,
 } from '../../constants';
+import { InputContext } from '../../context/InputContext';
+import Input from '../Input';
 import classes from './styles.module.scss';
 
 interface IHeaderProps {}
 
 const Header: React.FC<IHeaderProps> = () => {
+    const { value, handleValueChange } = useContext(InputContext);
+
     const handleIconClick = useCallback((url: string) => {
         window.open(url, '__blank', 'noopener,noreferrer');
+    }, []);
+
+    const onInputChange = useCallback((e: any) => {
+        handleValueChange(e?.target?.value);
     }, []);
 
     return (
@@ -47,6 +55,12 @@ const Header: React.FC<IHeaderProps> = () => {
                     <BuyMeACoffee />
                 </div>
             </div>
+            <Input
+                value={value}
+                placeholder="Search GitHub username"
+                onChange={onInputChange}
+                className={classes.inputWrapper}
+            />
         </div>
     );
 };

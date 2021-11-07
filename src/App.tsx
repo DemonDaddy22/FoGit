@@ -9,7 +9,6 @@ const App = () => {
         <div className="App">
             <InputContextProvider>
                 <Header />
-                <Input value="hola" />
                 <Content />
             </InputContextProvider>
         </div>
