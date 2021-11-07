@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/FoGit/static/css/main.31b01480.chunk.css",
-    "main.js": "/FoGit/static/js/main.72a60df0.chunk.js",
-    "runtime-main.js": "/FoGit/static/js/runtime-main.f4244037.js",
-    "static/js/2.92b0c81d.chunk.js": "/FoGit/static/js/2.92b0c81d.chunk.js",
-    "static/js/3.feae3b15.chunk.js": "/FoGit/static/js/3.feae3b15.chunk.js",
+    "main.css": "/FoGit/static/css/main.02f86861.chunk.css",
+    "main.js": "/FoGit/static/js/main.f22ec075.chunk.js",
+    "runtime-main.js": "/FoGit/static/js/runtime-main.d8907d82.js",
+    "static/js/2.e61ccab8.chunk.js": "/FoGit/static/js/2.e61ccab8.chunk.js",
+    "static/js/3.d9f801b6.chunk.js": "/FoGit/static/js/3.d9f801b6.chunk.js",
     "index.html": "/FoGit/index.html",
-    "static/js/2.92b0c81d.chunk.js.LICENSE.txt": "/FoGit/static/js/2.92b0c81d.chunk.js.LICENSE.txt"
+    "static/js/2.e61ccab8.chunk.js.LICENSE.txt": "/FoGit/static/js/2.e61ccab8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f4244037.js",
-    "static/js/2.92b0c81d.chunk.js",
-    "static/css/main.31b01480.chunk.css",
-    "static/js/main.72a60df0.chunk.js"
+    "static/js/runtime-main.d8907d82.js",
+    "static/js/2.e61ccab8.chunk.js",
+    "static/css/main.02f86861.chunk.css",
+    "static/js/main.f22ec075.chunk.js"
   ]
 }
