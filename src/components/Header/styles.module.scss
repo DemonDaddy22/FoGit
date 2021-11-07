@@ -11,7 +11,8 @@
 
     @media screen and (min-height: 800px) and (min-width: 1200px) {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: initial;
+        gap: 5rem;
         padding: 0 10rem 2rem;
     }
 }
@@ -20,16 +21,19 @@
     font-family: 'Rock Salt', cursive;
     font-size: 2rem;
     font-weight: 700;
-    color: $accent-green;
+    color: $accent-pink;
 }
 
 .iconsContainer {
     display: inline-flex;
     gap: 1.5rem;
+    flex: 1;
     align-items: center;
+    margin-bottom: 1rem;
 
     @media screen and (min-height: 800px) and (min-width: 1200px) {
         gap: 1.75rem;
+        margin-bottom: 0;
     }
 }
 
@@ -41,5 +45,11 @@
     &:hover {
         filter: saturate(0.25);
         transform: translateY(-0.25rem);
+    }
+}
+
+.inputWrapper {
+    @media screen and (min-height: 800px) and (min-width: 1200px) {
+        margin-left: auto;
     }
 }
