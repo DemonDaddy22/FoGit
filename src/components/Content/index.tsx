@@ -22,8 +22,6 @@ interface IData {
     supporters: Array<any>;
 }
 
-// TODO - move out loading and error, and pass them to content columns
-
 const Content: React.FC<IContentProps> = () => {
     const { searchValue, fetchResults, handleSearch } =
         useContext(InputContext);
