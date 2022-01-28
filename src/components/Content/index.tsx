@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { differenceBy, intersectionBy } from 'lodash';
 import ContentColumn from '../ContentColumn';
 import classes from './styles.module.scss';
@@ -7,7 +7,6 @@ import { COLORS, GITHUB_BASE_URI, PAGE_SIZE } from '../../constants';
 import axios from 'axios';
 import useAsyncExec from '../../hooks/useAsyncExec';
 import { createListOfSize } from '../../utils';
-import { InputContext } from '../../context/InputContext';
 
 interface IContentProps {}
 
@@ -23,9 +22,6 @@ interface IData {
 }
 
 const Content: React.FC<IContentProps> = () => {
-    const { searchValue, fetchResults, handleSearch } =
-        useContext(InputContext);
-
     const [getFollowers, setGetFollowers] = useState<boolean>(false);
     const [getFollowing, setGetFollowing] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
@@ -48,7 +44,7 @@ const Content: React.FC<IContentProps> = () => {
         setLoading(true);
         try {
             const userResponse = await axios.get(
-                `${GITHUB_BASE_URI}/${searchValue}`
+                `${GITHUB_BASE_URI}/DemonDaddy22`
             );
             const { followers = 0, following = 0 } = userResponse?.data || {};
             setFollowers((prevFollowers) => ({
@@ -70,65 +66,55 @@ const Content: React.FC<IContentProps> = () => {
             setError(err);
         }
         setLoading(false);
-    }, [searchValue]);
+    }, []);
 
-    const fetchFollowers = useCallback(
-        async (followersCount: number) => {
-            setLoading(true);
-            const pages = Math.ceil(followersCount / PAGE_SIZE);
-            const pageList = createListOfSize(pages);
-            try {
-                const pagesData = await Promise.all(
-                    pageList.map((page) =>
-                        axios.get(
-                            `${GITHUB_BASE_URI}/${searchValue}/followers`,
-                            {
-                                params: { page, per_page: PAGE_SIZE },
-                            }
-                        )
-                    )
-                );
-                setError(null);
-                setFollowers((prevFollowers) => ({
-                    ...prevFollowers,
-                    data: pagesData?.[0]?.data || [],
-                }));
-            } catch (error) {
-                setError(error);
-            }
-            setLoading(false);
-        },
-        [searchValue]
-    );
+    const fetchFollowers = useCallback(async (followersCount: number) => {
+        setLoading(true);
+        const pages = Math.ceil(followersCount / PAGE_SIZE);
+        const pageList = createListOfSize(pages);
+        try {
+            const pagesData = await Promise.all(
+                pageList.map((page) =>
+                    axios.get(`${GITHUB_BASE_URI}/DemonDaddy22/followers`, {
+                        // eslint-disable-next-line camelcase
+                        params: { page, per_page: PAGE_SIZE },
+                    })
+                )
+            );
+            setError(null);
+            setFollowers((prevFollowers) => ({
+                ...prevFollowers,
+                data: pagesData?.[0]?.data || [],
+            }));
+        } catch (error) {
+            setError(error);
+        }
+        setLoading(false);
+    }, []);
 
-    const fetchFollowing = useCallback(
-        async (followingCount: number) => {
-            setLoading(true);
-            const pages = Math.ceil(followingCount / PAGE_SIZE);
-            const pageList = createListOfSize(pages);
-            try {
-                const pagesData = await Promise.all(
-                    pageList.map((page) =>
-                        axios.get(
-                            `${GITHUB_BASE_URI}/${searchValue}/following`,
-                            {
-                                params: { page, per_page: PAGE_SIZE },
-                            }
-                        )
-                    )
-                );
-                setError(null);
-                setFollowing((prevFollowing) => ({
-                    ...prevFollowing,
-                    data: pagesData?.[0]?.data || [],
-                }));
-            } catch (error) {
-                setError(error);
-            }
-            setLoading(false);
-        },
-        [searchValue]
-    );
+    const fetchFollowing = useCallback(async (followingCount: number) => {
+        setLoading(true);
+        const pages = Math.ceil(followingCount / PAGE_SIZE);
+        const pageList = createListOfSize(pages);
+        try {
+            const pagesData = await Promise.all(
+                pageList.map((page) =>
+                    axios.get(`${GITHUB_BASE_URI}/DemonDaddy22/following`, {
+                        // eslint-disable-next-line camelcase
+                        params: { page, per_page: PAGE_SIZE },
+                    })
+                )
+            );
+            setError(null);
+            setFollowing((prevFollowing) => ({
+                ...prevFollowing,
+                data: pagesData?.[0]?.data || [],
+            }));
+        } catch (error) {
+            setError(error);
+        }
+        setLoading(false);
+    }, []);
 
     useEffect(() => {
         const supporters = differenceBy(followers.data, following.data, 'id');
@@ -138,11 +124,8 @@ const Content: React.FC<IContentProps> = () => {
     }, [followers.data, following.data]);
 
     useEffect(() => {
-        if (fetchResults) {
-            fetchUserData();
-            handleSearch(false);
-        }
-    }, [fetchResults, fetchUserData, handleSearch]);
+        fetchUserData();
+    }, [fetchUserData]);
 
     useEffect(() => {
         if (getFollowers) {
